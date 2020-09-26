@@ -1,16 +1,17 @@
-	$(document).ready(function() {
+$(document).ready(function() {
 
-	// when move mode 
-	    $(".listMode").click(function(){
-          $(".listMode").toggleClass("active")
-          $("body").toggleClass("dark")
-        });
+	
+		// when move mode
+		$(".listMode").click(function(){
+			$(".listMode").toggleClass("active")
+			$("body").toggleClass("dark")
+		});
 
-    //  ##################################################################
+		//  ##################################################################
 
 
 
-		 // when click displays passed or failed or total
+		// when click displays passed or failed or total
 		$(".blue").click(function(){
 			$("div.testCase.passed").removeClass("nonactive")
 			$("div.testCase.failed").removeClass("nonactive")
@@ -49,42 +50,6 @@
 		$(".buttonInfoServices").click(function(){
 			$(".infoTestCase").toggleClass("active")
 		});
-
-		  // ################################################################## 
-
-
-
-
-
-      // new google Chart
-      google.charts.load("current", {"packages":["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-	  
-	  const queryString = window.location.href;
-	 const urlParams = new URLSearchParams(queryString);
-	 const failedCount = urlParams.get('failedCount')
-	 const passedCount = urlParams.get('passedCount')
-	 
-        var data = google.visualization.arrayToDataTable([
-          ["Task", "total result"],
-          ["Failed", failedCount],
-          ["Passed", passedCount]
-        ]);
-
-        var options = {
-          title: "Automation Result Test Cases",
-          colors: ["#e44a50", "#109618"],
-          is3D: true
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById("piechart"));
-
-        chart.draw(data,options);
-      }
-
-      //  ################################################################## 
 
 });
 
