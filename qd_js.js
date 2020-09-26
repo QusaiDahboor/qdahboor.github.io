@@ -1,18 +1,16 @@
-
-
 	$(document).ready(function() {
 
-	<!-- when move mode -->
+	// when move mode 
 	    $(".listMode").click(function(){
           $(".listMode").toggleClass("active")
           $("body").toggleClass("dark")
         });
 
-    <!--  ################################################################## -->
+    //  ##################################################################
 
 
 
-		<!-- when click displays passed or failed or total -->
+		 // when click displays passed or failed or total
 		$(".blue").click(function(){
 			$("div.testCase.passed").removeClass("nonactive")
 			$("div.testCase.failed").removeClass("nonactive")
@@ -45,20 +43,20 @@
 			window.scrollTo(0,document.querySelector(".listOfScenarios").scrollHeight);
 		}
 
-		<!--  ################################################################## -->
-		<!-- when click displays info services -->
+		// ##################################################################
+		// when click displays info services
 
 		$(".buttonInfoServices").click(function(){
 			$(".infoTestCase").toggleClass("active")
 		});
 
-		<!--  ################################################################## -->
+		  // ################################################################## 
 
 
 
 
 
-      <!-- new google Chart-->
+      // new google Chart
       google.charts.load("current", {"packages":["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -81,7 +79,7 @@
         chart.draw(data,options);
       }
 
-      <!--  ################################################################## -->
+      //  ################################################################## 
 
 });
 
