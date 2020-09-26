@@ -62,15 +62,10 @@
 
       function drawChart() {
 	      
-	 const queryString = window.location.search;
-	 const urlParams = new URLSearchParams(queryString);
-	 const failedCount = urlParams.get('failedCount')
-	 const passedCount = urlParams.get('passedCount')
-
         var data = google.visualization.arrayToDataTable([
           ["Task", "total result"],
-          ["Failed", failedCount],
-          ["Passed", passedCount]
+          ["Failed", 3],
+          ["Passed", 9]
         ]);
 
         var options = {
