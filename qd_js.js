@@ -61,16 +61,21 @@
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-	      
+	  
+	  const queryString = window.location.href;
+	 const urlParams = new URLSearchParams(queryString);
+	 const failedCount = urlParams.get('failedCount')
+	 const passedCount = urlParams.get('passedCount')
+	 
         var data = google.visualization.arrayToDataTable([
           ["Task", "total result"],
-          ["Failed", 3],
-          ["Passed", 9]
+          ["Failed", failedCount],
+          ["Passed", passedCount]
         ]);
 
         var options = {
           title: "Automation Result Test Cases",
-          colors: ["${colorFailed}", "${colorPassed}"],
+          colors: ["#e44a50", "#109618"],
           is3D: true
         };
 
