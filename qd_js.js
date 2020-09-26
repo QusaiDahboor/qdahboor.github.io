@@ -62,7 +62,7 @@
 
       function drawChart() {
 	      
-	 const queryString = window.location.href;
+	 const queryString = window.location.search;
 	 const urlParams = new URLSearchParams(queryString);
 	 const failedCount = urlParams.get('failedCount')
 	 const passedCount = urlParams.get('passedCount')
